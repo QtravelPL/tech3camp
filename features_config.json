@@ -1,0 +1,44 @@
+[
+   {
+    "name":"original_score",
+    "class":"org.apache.solr.ltr.feature.OriginalScoreFeature",
+    "params":{},
+    "store":"features_store"
+  },
+  {
+    "name":"description_pl_bm25",
+    "class":"org.apache.solr.ltr.feature.SolrFeature",
+    "params":{"q":"description_pl:(${keywords})"},
+    "store":"features_store"
+  },
+  {
+    "name":"term_maintenance_name_pl_bm25",
+    "class":"org.apache.solr.ltr.feature.SolrFeature",
+    "params":{"q":"term_maintenance_name_pl:(${keywords})"},
+    "store":"features_store"
+  },
+  {
+    "name":"term_departure_city_pl_bm25",
+    "class":"org.apache.solr.ltr.feature.SolrFeature",
+    "params":{"q":"term_departure_city_pl:(${keywords})"},
+    "store":"features_store"
+  },
+  {
+    "name":"country_source_name_pl_bm25",
+    "class":"org.apache.solr.ltr.feature.SolrFeature",
+    "params":{"q":"country_source_name_pl:(${keywords})"},
+    "store":"features_store"
+  },
+  {
+    "store" : "features_store",
+    "name" : "search_country_popularity_score",
+    "class" : "org.apache.solr.ltr.feature.FieldValueFeature",
+    "params" : { "field" : "search_country_popularity_score" }
+  },
+  {
+    "store" : "features_store",
+    "name" : "search_departure_city_popularity_score",
+    "class" : "org.apache.solr.ltr.feature.FieldValueFeature",
+    "params" : { "field" : "search_departure_city_popularity_score"}
+  }
+]
